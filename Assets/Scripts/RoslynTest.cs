@@ -6,7 +6,7 @@ using UnityEngine.Assertions;
 public class RoslynTest : MonoBehaviour {
     async void OnEnable() {
         var result = await CSharpScript.EvaluateAsync<double>("System.Math.Pow(2,3)");
-        Debug.LogFormat("res is {0}", result);
+        Debug.LogFormat("Math.Pow(2,3) = {0}", result);
         Assert.AreEqual(result, 8);
 
         var vec = await CSharpScript.EvaluateAsync<Vector3>(

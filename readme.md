@@ -1,4 +1,4 @@
-# WARNING: this is just POC (proof of concept), not properly tested!
+# WARNING: this is just a PoC (Proof of Concept), not properly tested!
 
 
 ## Unity runtime scripting using Roslyn compiler
@@ -9,7 +9,7 @@ just example how to use Roslyn scripting with Unity
 
 ```cs
 var result = await CSharpScript.EvaluateAsync<double>("System.Math.Pow(2,3)");
-Debug.LogFormat("res is {0}", result);
+Debug.LogFormat("Math.Pow(2,3) = {0}", result);
 Assert.AreEqual(result, 8);
 ```
 
@@ -26,6 +26,8 @@ Debug.LogFormat("vector = {0}", vec);
 
 - Parameterize a script
 
+NB: this sample works only with .Net Framework compatible level 
+
 ```cs
 var prevPos = Vector3.zero;
 transform.position = prevPos;
@@ -41,7 +43,7 @@ Debug.LogFormat("transform pos is {0} was {1}", position, prevPos);
 
 ## Extra setup
 
-- Install required dlls into Assets/Plugins folder (reed Assets/Plugins/readme.md for more info)
+- Install required dlls into Assets/Plugins folder (read Assets/Plugins/readme.md for more info)
 
 ### Useful links
 - https://github.com/dotnet/roslyn/blob/main/docs/wiki/Scripting-API-Samples.md
